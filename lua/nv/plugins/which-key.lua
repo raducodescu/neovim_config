@@ -2,11 +2,11 @@ return {
   "folke/which-key.nvim",
   event = "VeryLazy",
   opts = {
-    preset = "helix",
+    preset = "modern",
     delay = 0,
-    height = math.huge,
+    height = 25,
     icons = {
-      mappings = false, -- disable icons in keymaps
+      mappings = true, -- disable icons in keymaps
     },
     sort = { "alphanum" },
     spec = {

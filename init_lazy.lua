@@ -21,12 +21,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
--- install plugins
-local plugins = {
-  "folke/tokyonight.nvim",
-}
 require("lazy").setup(plugins, {
   root = root .. "/plugins",
 })
-
-vim.cmd.colorscheme("tokyonight")

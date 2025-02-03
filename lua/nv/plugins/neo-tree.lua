@@ -2,6 +2,7 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
   cmd = "Neotree",
+  enabled = false,
   keys = {
     { "<leader>fp", "<cmd>Neotree reveal toggle<cr>", desc = "Toggle Filetree" },
   },

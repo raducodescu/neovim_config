@@ -87,9 +87,9 @@ map("n", ";;", function()
   vim.api.nvim_win_set_cursor(0, cursor)
 end, { desc = "Toggle semicolon in current line" })
 
-map("n", "\\q", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 -- tabs
-
+map("n", "\\q", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+map("n", "\\t", "<cmd>tabnew<cr>", { desc = "Open new tab" })
 -- Map \l to switch to the next tab
 map("n", "\\l", ":tabnext<CR>", { desc = "Next tab", noremap = true, silent = true })
 -- Map \h to switch to the previous tab

@@ -117,7 +117,7 @@ return {
         -- stylua: ignore start
         Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>ts")
         Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
-        Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>un")
+        -- Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>un")
         Snacks.toggle.option("cursorline", { name = "Cursorline" }):map("<leader>uC")
         Snacks.toggle.diagnostics():map("<leader>ud")
         Snacks.toggle.line_number():map("<leader>ul")

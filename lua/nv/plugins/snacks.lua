@@ -106,7 +106,9 @@ return {
     { "<leader>lr", function() Snacks.picker.lsp_references():set_layout("ivy") end, nowait = true, desc = "References" },
     { "<leader>lI", function() Snacks.picker.lsp_implementations():set_layout("ivy") end, desc = "Implementation" },
     { "<leader>lt", function() Snacks.picker.lsp_type_definitions():set_layout("ivy") end, desc = "Type Definition" },
+    { "<leader>bo", function() Snacks.picker.buffers():set_layout("ivy") end, desc = "Opened Buffers" },
   },
+
   -- stylua: ignore end
   init = function()
     vim.api.nvim_create_autocmd("User", {

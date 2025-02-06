@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
+    enabled = true,
     event = { "BufReadPre", "BufNewFile", "InsertLeave" },
     opts = {
       format_on_save = function()
@@ -8,7 +9,7 @@ return {
         if not vim.g.autoformat then
           return
         end
-        return { async = false, timeout_ms = 500, lsp_fallback = false }
+        return { async = false, timeout_ms = 1500, lsp_fallback = false }
       end,
       -- log_level = vim.log.levels.TRACE,
       formatters_by_ft = {
@@ -17,7 +18,7 @@ return {
         json = { "prettier" },
         lua = { "stylua" },
         markdown = { "prettier", "markdownlint-cli2" },
-        python = { "isort", "ruff_format" },
+        python = { "isort", "black" },
         sh = { "shfmt" },
         terraform = { "terraform_fmt" },
         ["terraform-vars"] = { "terraform_fmt" },

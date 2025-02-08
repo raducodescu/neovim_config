@@ -98,9 +98,6 @@ return {
             pyls_isort = { enabled = true },
           },
         },
-        pyright = {
-          enabled = false,
-        },
         rust_analyzer = {},
         terraformls = {},
         tinymist = {},

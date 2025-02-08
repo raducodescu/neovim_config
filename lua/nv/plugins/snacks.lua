@@ -88,6 +88,7 @@ return {
     { "#",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference" },
     { "<leader>ss", function() Snacks.picker.grep():set_layout("ivy") end, desc = "Strings" },
     { "<leader>sh", function() Snacks.picker.help():set_layout("ivy") end, desc = "Help" },
+    { "<leader>fr", function() Snacks.picker.recent():set_layout("ivy") end, desc = "Recent" },
     { "<leader>ff", function() Snacks.picker.smart({filter = {cwd = true}}):set_layout("ivy") end, desc = "Smart find" },
     { "<leader>sl", function() Snacks.picker.lines():set_layout("ivy") end, desc = "Buffer Lines" },
     { "<leader>si", function() Snacks.picker.icons():set_layout("ivy") end, desc = "Icons" },

@@ -58,6 +58,7 @@ return {
 
   {
     "allaman/kustomize.nvim",
+    enabled = false,
     dev = true,
     ft = "yaml",
     opts = {

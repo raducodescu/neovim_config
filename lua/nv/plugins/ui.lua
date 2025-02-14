@@ -24,23 +24,45 @@ return {
       vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE" }) -- no background for dropbar
     end,
   },
-
   {
     "mikavilpas/yazi.nvim",
-    lazy = true, -- use `event = "VeryLazy"` for netrw replacement
+    enabled = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    event = "VeryLazy",
     keys = {
-      -- NOTE: my mapping <leader>lf is soo good but in the LSP cluster
       {
-        "<leader>lf",
-        "<cmd>Yazi<cr>",
-        desc = "Open Yazi (file manager)",
+        "<leader>fy",
+        function()
+          require("yazi").yazi()
+        end,
+        desc = "Open the file manager",
+      },
+      {
+        "<leader>fw",
+        function()
+          require("yazi").yazi(nil, vim.fn.getcwd())
+        end,
+        desc = "Open the file manager in the cwd",
       },
     },
+    ---@type YaziConfig
     opts = {
-      open_for_directories = true,
+      open_for_directories = false,
+      enable_mouse_support = true,
+      -- log_level = vim.log.levels.DEBUG,
+      ---@diagnostic disable-next-line: missing-fields
+      hooks = {
+        yazi_closed_successfully = function(chosen_file, config, state)
+          if chosen_file == nil and state.last_directory.filename then
+            vim.notify("Changing directory to " .. state.last_directory.filename)
+            vim.fn.chdir(state.last_directory.filename)
+          end
+        end,
+      },
     },
   },
-
   {
     "folke/noice.nvim",
     event = "VeryLazy",

@@ -20,8 +20,7 @@ return {
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.picker.smart({filter = {cwd = true}})" },
           { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
           { icon = " ", key = "s", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = " ", key = "b", desc = "File browser", action = function()  require("yazi").yazi(nil, vim.fn.getcwd()) end,
-          },
+          -- { icon = " ", key = "b", desc = "File browser", action = function()  require("yazi").yazi(nil, vim.fn.getcwd()) end, },
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy check", enabled = package.loaded.lazy },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           -- stylua: ignore end
@@ -29,8 +28,9 @@ return {
       },
       sections = {
         { section = "header" },
-        { section = "keys", gap = 1 },
-        { title = "Recent Files", section = "recent_files", indent = 2, padding = { 2, 2 } },
+        { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+        { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+        { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
         { section = "startup" },
       },
     },
@@ -54,11 +54,7 @@ return {
       },
       win = {
         input = {
-          keys = {
-            -- TODO: not sure if I want this as before
-            -- ["<Esc>"] = { "close", mode = { "n", "i" } },
-            ["<C-h>"] = { "toggle_hidden", mode = { "i", "n" } },
-          },
+          keys = {},
         },
       },
     },
@@ -84,8 +80,8 @@ return {
     { "<leader>sb", function() Snacks.picker.git_branches() end, desc = "Branches" },
     { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo Tree" },
     { "<leader>fR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-    { "*",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference" },
-    { "#",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference" },
+    { "<leader>rn", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference" },
+    { "<leader>rp", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference" },
     { "<leader>ss", function() Snacks.picker.grep():set_layout("ivy") end, desc = "Strings" },
     { "<leader>sh", function() Snacks.picker.help():set_layout("ivy") end, desc = "Help" },
     { "<leader>fr", function() Snacks.picker.recent():set_layout("ivy") end, desc = "Recent" },

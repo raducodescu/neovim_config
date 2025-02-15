@@ -10,6 +10,9 @@ return {
       },
     },
     version = "*",
+    appearance = {
+      nerd_font_variant = "mono",
+    },
     opts = {
       keymap = {
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
@@ -64,7 +67,7 @@ return {
           window = { border = "rounded" },
         },
         list = {
-          selection = { preselect = true, auto_insert = false },
+          selection = { preselect = false, auto_insert = true },
         },
         trigger = {
           show_on_insert_on_trigger_character = false,

@@ -7,13 +7,12 @@ return {
         "rafamadriz/friendly-snippets",
         config = function()
           require("luasnip.loaders.from_vscode").lazy_load() -- load friendly-snippets
-          require("luasnip").filetype_extend("all", { "loremipsum" }) -- load loremipsum snippets from friendly-snippets
         end,
       },
     },
     build = "make install_jsregexp",
     opts = {
-      snippets_path = { vim.fn.stdpath("config") .. "/snippets" }, -- can be overwritten with a LazySpec in extra/
+      snippets_path = { os.getenv("HOME") .. "/.config/nvim/snippets/" },
       history = true,
       updateevents = "TextChanged,TextChangedI",
       delete_check_events = "TextChanged",
@@ -29,7 +28,6 @@ return {
       end)
     end,
   },
-
   -- luasnip integration
   {
     "saghen/blink.cmp",

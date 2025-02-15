@@ -9,7 +9,7 @@ return {
         opts = {},
       },
     },
-    version = "v0.*",
+    version = "*",
     opts = {
       keymap = {
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
@@ -41,9 +41,7 @@ return {
         default = { "lsp", "path", "snippets", "buffer" },
         providers = {
           lsp = {
-            min_keyword_length = function(ctx)
-              return ctx.trigger.kind == "manual" and 0 or 2 -- trigger when invoking with shortcut
-            end,
+            min_keyword_length = 0,
             score_offset = 0,
           },
           path = {
@@ -53,7 +51,7 @@ return {
             min_keyword_length = 2,
           },
           buffer = {
-            min_keyword_length = 5,
+            min_keyword_length = 3,
             max_items = 5,
           },
         },
@@ -66,16 +64,20 @@ return {
           window = { border = "rounded" },
         },
         list = {
-          selection = { preselect = false, auto_insert = true },
+          selection = { preselect = true, auto_insert = false },
         },
         trigger = {
           show_on_insert_on_trigger_character = false,
           show_on_accept_on_trigger_character = false,
         },
         menu = {
+          auto_show = true,
           border = "rounded",
           draw = {
-            columns = { { "label", "label_description", gap = 1 }, { "kind_icon" } },
+            columns = {
+              { "label", "label_description", gap = 1 },
+              { "kind_icon", "kind", gap = 2 },
+            },
           },
         },
       },

@@ -11,6 +11,8 @@ map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 -- Cancel search highlighting with ESC
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Clear hlsearch and ESC" })
 

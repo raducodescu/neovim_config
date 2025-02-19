@@ -2,7 +2,7 @@
 ---@type LazySpec
 return {
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
+  event = { "BufReadPre", "BufNewFile", "InsertLeave" },
   cmd = { "ConformInfo" },
   keys = {
     {
@@ -55,7 +55,7 @@ return {
       json = { "prettier" },
       lua = { "stylua" },
       markdown = { "prettier", "markdownlint-cli2" },
-      python = { "ruff_format" },
+      python = { "ruff_fix", "ruff_format" },
       sh = { "shfmt" },
       toml = { "taplo" },
       typescript = { "prettier" },

@@ -14,6 +14,7 @@ Brew:
 - cargo
 - shfmt
 - terraform
+- yamlfmt
 
 Cargo
 

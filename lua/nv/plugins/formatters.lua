@@ -37,10 +37,10 @@ return {
   opts = {
     format_on_save = function()
       -- Disable with a global variable
-      if not vim.g_autoformat then
+      if not vim.g.autoformat then
         return
       end
-      return { async = false, timeout_ms = 500, lsp_fallback = false }
+      return { async = true, timeout_ms = 2000, lsp_fallback = false }
     end,
 
     default_format_opts = {

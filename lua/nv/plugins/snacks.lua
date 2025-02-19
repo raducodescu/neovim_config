@@ -66,7 +66,7 @@ return {
       enabled = true,
       ---@type table<string, boolean>
       toggles = {
-        dim = false,
+        dim = true,
         git_signs = false,
         mini_diff_signs = false,
         diagnostics = true,

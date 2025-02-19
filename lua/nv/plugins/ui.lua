@@ -107,6 +107,16 @@ return {
     "folke/tokyonight.nvim",
     priority = 1000,
     lazy = false,
+    ---@class tokyonight.Config
+    opts = {
+      transparent = false, -- Enable transparency
+      styles = {
+        -- Background styles. Can be "dark", "transparent" or "normal"
+        sidebars = "dark",
+        floats = "dark",
+      },
+      dim_inactive = false, -- dims inactive windows
+    },
     config = function()
       require("tokyonight").setup()
       vim.cmd("colorscheme tokyonight-moon")

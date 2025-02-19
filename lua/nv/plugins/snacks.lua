@@ -62,7 +62,22 @@ return {
     scroll = { enabled = false },
     statuscolumn = { enabled = true },
     words = { enabled = true },
-    zen = { enabled = true },
+    zen = {
+      enabled = true,
+      ---@type table<string, boolean>
+      toggles = {
+        dim = false,
+        git_signs = false,
+        mini_diff_signs = false,
+        diagnostics = true,
+        -- inlay_hints = false,
+      },
+      win = {
+        backdrop = {
+          transparent = false,
+        },
+      },
+    },
     styles = {
       notification = {
         wo = { wrap = true },

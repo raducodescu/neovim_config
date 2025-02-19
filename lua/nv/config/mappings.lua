@@ -75,20 +75,6 @@ map("i", "<C-l>", function()
   end
 end, { desc = "move over a closing element" })
 
--- Toggle ';' in current line
-map("n", ";;", function()
-  local cursor = vim.api.nvim_win_get_cursor(0)
-  local line = vim.api.nvim_get_current_line()
-  local last_char = string.sub(line, -1, -1)
-  if last_char == ";" then
-    vim.cmd("s/;$//")
-    vim.cmd(":nohlsearch")
-  else
-    vim.cmd("norm A;")
-  end
-  vim.api.nvim_win_set_cursor(0, cursor)
-end, { desc = "Toggle semicolon in current line" })
-
 -- tabs
 map("n", "\\q", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "\\t", "<cmd>tabnew<cr>", { desc = "Open new tab" })

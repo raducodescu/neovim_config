@@ -9,7 +9,7 @@ return {
         clangd = {},
         gopls = {
           settings = {
-            gofumpt = true,
+            gofumpt = false,
             codelenses = {
               gc_details = false,
               generate = true,

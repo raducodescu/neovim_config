@@ -2,12 +2,16 @@ return {
   "nvim-lualine/lualine.nvim",
   event = "BufReadPost",
   opts = {
+    theme = "auto",
+    icons_enabled = true,
     extensions = { "fzf", "lazy", "mason", "quickfix" },
     options = {
       disabled_filetypes = { "neo-tree", "snacks_dashboard", "Outline" },
     },
     sections = {
-      lualine_a = {}, -- hide mode
+      lualine_a = {
+        "mode",
+      }, -- hide mode
       lualine_b = {
         "branch",
         "diff",
@@ -62,13 +66,75 @@ return {
       end,
     })
 
+    local function getLspName()
+      local bufnr = vim.api.nvim_get_current_buf()
+      local buf_clients = vim.lsp.get_clients({ bufnr = bufnr })
+      if next(buf_clients) == nil then
+        return "  No servers"
+      end
+      return buf_clients[1].name
+    end
+
+    local function getLinterName()
+      local buf_ft = vim.bo.filetype
+      local lint_s, lint = pcall(require, "lint")
+      if lint_s then
+        for ft_k, ft_v in pairs(lint.linters_by_ft) do
+          if type(ft_v) == "table" then
+            for _, linter in ipairs(ft_v) do
+              if buf_ft == ft_k then
+                return linter
+              end
+            end
+          elseif type(ft_v) == "string" then
+            if buf_ft == ft_k then
+              return ft_v
+            end
+          end
+        end
+      end
+    end
+
+    local function getFormatterName()
+      local ok, conform = pcall(require, "conform")
+      local formatters = table.concat(conform.list_formatters_for_buffer(), " ")
+      if ok then
+        for formatter in formatters:gmatch("%w+") do
+          if formatter then
+            return formatter
+          end
+        end
+      end
+    end
+
+    -- Insert Lsp
+    table.insert(opts.sections.lualine_x, 1, {
+      function()
+        return getLspName()
+      end,
+    })
+
+    -- Insert linter name
+    table.insert(opts.sections.lualine_x, 2, {
+      function()
+        return getLinterName()
+      end,
+    })
+
+    -- Insert formatter name
+    table.insert(opts.sections.lualine_x, 3, {
+      function()
+        return getFormatterName()
+      end,
+    })
+
     -- Don't display fileformat if fileformat is unix
     local function fileformat()
       local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
       return ret
     end
 
-    table.insert(opts.sections.lualine_x, 1, {
+    table.insert(opts.sections.lualine_x, 4, {
       fileformat,
       cond = function()
         return fileformat() ~= ""

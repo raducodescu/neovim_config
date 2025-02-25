@@ -64,4 +64,24 @@ return {
       require("kustomize").setup(opts)
     end,
   },
+  {
+    "fredrikaverpil/godoc.nvim",
+    version = "*",
+    dependencies = {
+      { "folke/snacks.nvim" }, -- optional
+    },
+    build = "go install github.com/lotusirous/gostdsym/stdsym@latest", -- optional
+    cmd = { "GoDoc" },
+    opts = {},
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+    config = function(_, opts)
+      require("ibl").setup(opts)
+    end
+  },
 }

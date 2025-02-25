@@ -12,7 +12,7 @@ return {
     },
     build = "make install_jsregexp",
     opts = {
-      snippets_path = { os.getenv("HOME") .. "/.config/nvim/snippets/" },
+      snippets_path = { vim.fn.stdpath("config") .. "/snippets" },
       history = true,
       updateevents = "TextChanged,TextChangedI",
       delete_check_events = "TextChanged",

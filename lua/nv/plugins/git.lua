@@ -32,7 +32,6 @@ return {
       map("n", "gj", function() gs.nav_hunk("next") end, { desc = "Git Next hunk" })
       map("n", "gk", function() gs.nav_hunk("prev") end, { desc = "Git previous hunk" })
       map("n", "<leader>gs", gs.stage_hunk, { desc = "Stage hunk" })
-      map("v", "<leader>gr", function() gs.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') }) end, { desc = "Reset Hunk" })
       map("v", "<leader>gs", function() gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, { desc = "Stage hunk" })
       map("v", "<leader>gr", function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, { desc = "Reset Hunk" })
       map("n", "<leader>gS", gs.stage_buffer, { desc = "Stage buffer" })

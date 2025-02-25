@@ -4,7 +4,7 @@ return {
   opts = {
     theme = "auto",
     icons_enabled = true,
-    extensions = { "fzf", "lazy", "mason", "quickfix" },
+    extensions = { "lazy", "quickfix" },
     options = {
       disabled_filetypes = { "neo-tree", "snacks_dashboard", "Outline" },
     },

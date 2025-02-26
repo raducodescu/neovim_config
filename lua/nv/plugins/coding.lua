@@ -21,9 +21,18 @@ return {
       symbol_folding = {
         -- Depth past which nodes will be folded by default
         autofold_depth = 1,
+        auto_unfold = {
+          hovered = true,
+        },
       },
       guides = {
-        enabled = false,
+        enabled = true,
+      },
+      preview_window = {
+        auto_jump = true,
+      },
+      outline_items = {
+        show_symbol_lineno = true,
       },
     },
     keys = {

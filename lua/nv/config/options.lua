@@ -1,6 +1,6 @@
 local o = vim.opt
 
-vim.g.autoformat = true-- global var for toggling autoformat
+vim.g.autoformat = true -- global var for toggling autoformat
 
 -- stylua: ignore start
 o.clipboard      = "unnamedplus"                                   -- keep in sync with the system clipboard

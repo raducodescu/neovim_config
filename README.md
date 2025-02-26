@@ -15,6 +15,7 @@ Brew:
 - shfmt
 - terraform
 - yamlfmt
+- hadolint
 
 Cargo
 
@@ -25,6 +26,8 @@ Npm
 
 - markdownlint-cli2
 - prettier
+- dockerfile-language-server-nodejs
+- bash-language-server
 
 Pip
 

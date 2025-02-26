@@ -70,9 +70,19 @@ return {
     dependencies = {
       { "folke/snacks.nvim" }, -- optional
     },
+    keys = {
+      { "<leader>lh", "<cmd>GoDoc<cr>", desc = "Go documentation" },
+    },
     build = "go install github.com/lotusirous/gostdsym/stdsym@latest", -- optional
     cmd = { "GoDoc" },
-    opts = {},
+    opts = {
+      picker = {
+        type = "snacks",
+      },
+      window = {
+        type = "vsplit",
+      },
+    },
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -80,9 +90,6 @@ return {
     ---@module "ibl"
     ---@type ibl.config
     opts = {},
-    keys = {
-      { "<leader>lh", "<cmd>GoDoc<cr>", desc = "Go documentation" },
-    },
     config = function(_, opts)
       require("ibl").setup(opts)
     end,

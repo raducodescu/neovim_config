@@ -80,8 +80,11 @@ return {
     ---@module "ibl"
     ---@type ibl.config
     opts = {},
+    keys = {
+      { "<leader>lh", "<cmd>GoDoc<cr>", desc = "Go documentation" },
+    },
     config = function(_, opts)
       require("ibl").setup(opts)
-    end
+    end,
   },
 }

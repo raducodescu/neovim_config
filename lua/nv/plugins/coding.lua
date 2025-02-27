@@ -31,7 +31,12 @@ return {
       preview_window = {
         auto_jump = true,
       },
+      outline_window = {
+        show_cursor_line = true,
+        hide_cursor = true,
+      },
       outline_items = {
+        show_symbol_details = false,
         show_symbol_lineno = true,
       },
     },
@@ -50,6 +55,26 @@ return {
     },
     build = "go install github.com/lotusirous/gostdsym/stdsym@latest", -- optional
     cmd = { "GoDoc" },
+    opts = {
+      picker = {
+        type = "snacks",
+      },
+      window = {
+        type = "vsplit",
+      },
+    },
+  },
+  {
+    "fredrikaverpil/pydoc.nvim",
+    version = "*",
+    dependencies = {
+      { "folke/snacks.nvim" }, -- optional
+    },
+    keys = {
+      { "<leader>lh", "<cmd>GoDoc<cr>", desc = "Go documentation" },
+    },
+    build = "go install github.com/lotusirous/gostdsym/stdsym@latest", -- optional
+    cmd = { "PyDoc" },
     opts = {
       picker = {
         type = "snacks",

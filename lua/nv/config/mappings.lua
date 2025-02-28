@@ -38,6 +38,9 @@ map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "<leader>bD", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all but the current buffer" })
 
+-- terminal mapping
+vim.api.nvim_set_keymap("t", "<C-q>", "<C-\\><C-n><C-w>w", { noremap = true, silent = true })
+
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New file" })
 -- save file

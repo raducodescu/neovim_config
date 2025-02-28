@@ -119,7 +119,7 @@ return {
     { "<leader>lI", function() Snacks.picker.lsp_implementations():set_layout("ivy") end, desc = "Implementation" },
     { "<leader>lt", function() Snacks.picker.lsp_type_definitions():set_layout("ivy") end, desc = "Type Definition" },
     { "<leader>bo", function() Snacks.picker.buffers():set_layout("ivy") end, desc = "Opened Buffers" },
-    { "TT",  function() Snacks.terminal() end, desc = "Toggle Terminal" },
+    { "<leader>tt", function() Snacks.terminal() end, desc = "Toggle Terminal" },
   },
 
   -- stylua: ignore end

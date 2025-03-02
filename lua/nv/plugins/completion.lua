@@ -41,7 +41,7 @@ return {
         ["<C-b>"] = { "scroll_documentation_down", "fallback" },
       },
       sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets", "buffer", "codecompanion" },
         providers = {
           lsp = {
             min_keyword_length = 0,
@@ -56,6 +56,12 @@ return {
           buffer = {
             min_keyword_length = 1,
             max_items = 5,
+          },
+          codecompanion = {
+            min_keyword_length = 1,
+            name = "CodeCompanion",
+            module = "codecompanion.providers.completion.blink",
+            enabled = true,
           },
         },
       },
@@ -80,6 +86,7 @@ return {
             columns = {
               { "label", "label_description", gap = 1 },
               { "kind_icon", "kind", gap = 2 },
+              { "source_name", gap = 2 },
             },
           },
         },

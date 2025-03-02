@@ -11,9 +11,6 @@ Config using Lazyvim.
 
 **Snacks tools**: [snacks.nvim](https://github.com/folke/snacks.nvim)
 
-
-
-
 Requirements:
 Brew:
 
@@ -42,4 +39,3 @@ Npm
 Pip
 
 - black
-

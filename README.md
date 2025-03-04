@@ -23,6 +23,7 @@ Brew:
 - terraform
 - yamlfmt
 - hadolint
+- golangci-lint
 
 Cargo
 

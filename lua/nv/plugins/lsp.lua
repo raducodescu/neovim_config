@@ -6,7 +6,12 @@ return {
       servers = {
         bashls = {},
         dockerls = {},
-        clangd = {},
+        clangd = {
+          filetypes = { "c", "cpp" },
+        },
+        protols = {
+          filetypes = { "proto" },
+        },
         gopls = {
           settings = {
             gofumpt = false,
@@ -81,8 +86,7 @@ return {
           },
         },
         marksman = {},
-        pylsp = {
-        },
+        pylsp = {},
         rust_analyzer = {},
         terraformls = {},
         tinymist = {},

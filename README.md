@@ -24,11 +24,14 @@ Brew:
 - yamlfmt
 - hadolint
 - golangci-lint
+- protolint # linter for proto files
+- buf # formatter for proto files
 
 Cargo
 
 - selene
 - taplo-cli
+- protols # lsp for proto files
 
 Npm
 

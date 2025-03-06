@@ -56,6 +56,7 @@ return {
       lua = { "stylua" },
       markdown = { "prettier", "markdownlint-cli2" },
       python = { "ruff_fix", "ruff_format" },
+      proto = { "buf" },
       sh = { "shfmt" },
       toml = { "taplo" },
       typescript = { "prettier" },

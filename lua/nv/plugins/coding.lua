@@ -20,7 +20,7 @@ return {
     opts = {
       symbol_folding = {
         -- Depth past which nodes will be folded by default
-        autofold_depth = 1,
+        autofold_depth = 0,
         auto_unfold = {
           hovered = true,
         },

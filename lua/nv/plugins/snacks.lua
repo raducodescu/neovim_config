@@ -35,6 +35,7 @@ return {
       },
     },
     dim = { enabled = true },
+    lazygit = { enabled = true },
     indent = {
       enabled = true,
       indent = { only_scope = true }, -- only show indent where cursor is
@@ -92,6 +93,7 @@ return {
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     { "<leader>gB", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
     { "<leader>gx", function() Snacks.gitbrowse() end, desc = "Git Browse" },
+    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazy git" },
     { "<leader>sb", function() Snacks.picker.git_branches() end, desc = "Branches" },
     { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo Tree" },
     { "<leader>fR", function() Snacks.rename.rename_file() end, desc = "Rename File" },

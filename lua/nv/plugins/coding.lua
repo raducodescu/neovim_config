@@ -39,6 +39,15 @@ return {
         show_symbol_details = false,
         show_symbol_lineno = true,
       },
+      symbols = {
+        icon_fetcher = function(k)
+          if k == "Package" then
+            return ""
+          end
+          return false
+        end,
+        icon_source = "lspkind",
+      },
     },
     keys = {
       { "<leader>to", "<cmd>Outline<cr>", desc = "Toggle Outline" },

@@ -70,8 +70,8 @@ return {
           selection = { preselect = false, auto_insert = true },
         },
         trigger = {
-          show_on_insert_on_trigger_character = false,
-          show_on_accept_on_trigger_character = false,
+          show_on_insert_on_trigger_character = true,
+          show_on_accept_on_trigger_character = true,
         },
         menu = {
           auto_show = true,
@@ -80,10 +80,13 @@ return {
             columns = {
               { "label", "label_description", gap = 1 },
               { "kind_icon", "kind", gap = 2 },
+              { "source_name", gap = 1 },
             },
           },
         },
       },
+      fuzzy = { implementation = "prefer_rust_with_warning" },
+      signature = { enabled = true },
       -- experimental auto-brackets support
       -- completion = { accept = { auto_brackets = { enabled = true } } },
 

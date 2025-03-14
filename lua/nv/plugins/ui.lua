@@ -91,16 +91,6 @@ return {
   },
 
   {
-    "catgoose/nvim-colorizer.lua",
-    enabled = false,
-    cmd = "ColorizerToggle",
-    keys = {
-      { "<leader>ux", "<cmd>ColorizerToggle<cr>", desc = "Colorizer" },
-    },
-    opts = {},
-  },
-
-  {
     "folke/tokyonight.nvim",
     priority = 1000,
     lazy = false,

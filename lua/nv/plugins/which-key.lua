@@ -20,6 +20,11 @@ return {
       { "<leader>t", group = "Toggles" },
       { "<leader>u", group = "UI" },
       { "<leader>w", group = "Window" },
+      { "<leader>1", hidden = true },
+      { "<leader>2", hidden = true },
+      { "<leader>3", hidden = true },
+      { "<leader>4", hidden = true },
+      { "<leader>5", hidden = true },
     },
   },
   config = function(_, opts)

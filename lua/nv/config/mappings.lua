@@ -40,6 +40,7 @@ map("n", "<leader>bD", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all but the curren
 
 -- terminal mapping
 vim.api.nvim_set_keymap("t", "<C-q>", "<C-\\><C-n><C-w>w", { noremap = true, silent = true })
+map("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New file" })
@@ -81,10 +82,17 @@ end, { desc = "move over a closing element" })
 -- tabs
 map("n", "\\q", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "\\t", "<cmd>tabnew<cr>", { desc = "Open new tab" })
+map("n", "<C-t>", "<cmd>tabnew<cr>", { desc = "Open new tab" })
 -- Map \l to switch to the next tab
 map("n", "\\l", ":tabnext<CR>", { desc = "Next tab", noremap = true, silent = true })
 -- Map \h to switch to the previous tab
 map("n", "\\h", ":tabprevious<CR>", { desc = "Previous tab", noremap = true, silent = true })
+
+map("n", "<leader>1", "<cmd>tabn 1<cr>")
+map("n", "<leader>2", "<cmd>tabn 2<cr>")
+map("n", "<leader>3", "<cmd>tabn 3<cr>")
+map("n", "<leader>4", "<cmd>tabn 4<cr>")
+map("n", "<leader>5", "<cmd>tabn 5<cr>")
 
 local function safe_del_keymap(mode, key)
   if vim.fn.maparg(key, mode) ~= "" then

@@ -80,13 +80,12 @@ map("i", "<C-l>", function()
 end, { desc = "move over a closing element" })
 
 -- tabs
-map("n", "\\q", "<cmd>tabclose<cr>", { desc = "Close Tab" })
-map("n", "\\t", "<cmd>tabnew<cr>", { desc = "Open new tab" })
+map("n", "<leader>Tc", "<cmd>tabclose<cr>", { desc = "Close Tab", silent = true })
+map("n", "<leader>Tq", ":bdelete<CR>", { desc = "Close Buffer", noremap = true, silent = true })
+map("n", "<leader>Tn", "<cmd>tabnew<cr>", { desc = "Open new tab" })
 map("n", "<C-t>", "<cmd>tabnew<cr>", { desc = "Open new tab" })
--- Map \l to switch to the next tab
-map("n", "\\l", ":tabnext<CR>", { desc = "Next tab", noremap = true, silent = true })
--- Map \h to switch to the previous tab
-map("n", "\\h", ":tabprevious<CR>", { desc = "Previous tab", noremap = true, silent = true })
+map("n", "<leader>Tl", ":tabnext<CR>", { desc = "Next tab", noremap = true, silent = true })
+map("n", "<leader>Th", ":tabprevious<CR>", { desc = "Previous tab", noremap = true, silent = true })
 
 map("n", "<leader>1", "<cmd>tabn 1<cr>")
 map("n", "<leader>2", "<cmd>tabn 2<cr>")

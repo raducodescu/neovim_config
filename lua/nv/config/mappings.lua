@@ -80,18 +80,12 @@ map("i", "<C-l>", function()
 end, { desc = "move over a closing element" })
 
 -- tabs
-map("n", "<leader>Tc", "<cmd>tabclose<cr>", { desc = "Close Tab", silent = true })
+-- map("n", "<leader>Tc", "<cmd>tabclose<cr>", { desc = "Close Tab", silent = true })
 map("n", "<leader>Tq", ":bdelete<CR>", { desc = "Close Buffer", noremap = true, silent = true })
 map("n", "<leader>Tn", "<cmd>tabnew<cr>", { desc = "Open new tab" })
 map("n", "<C-t>", "<cmd>tabnew<cr>", { desc = "Open new tab" })
 map("n", "<leader>Tl", ":tabnext<CR>", { desc = "Next tab", noremap = true, silent = true })
 map("n", "<leader>Th", ":tabprevious<CR>", { desc = "Previous tab", noremap = true, silent = true })
-
-map("n", "<leader>1", "<cmd>tabn 1<cr>")
-map("n", "<leader>2", "<cmd>tabn 2<cr>")
-map("n", "<leader>3", "<cmd>tabn 3<cr>")
-map("n", "<leader>4", "<cmd>tabn 4<cr>")
-map("n", "<leader>5", "<cmd>tabn 5<cr>")
 
 local function safe_del_keymap(mode, key)
   if vim.fn.maparg(key, mode) ~= "" then

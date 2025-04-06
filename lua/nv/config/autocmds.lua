@@ -14,6 +14,21 @@ vim.api.nvim_create_autocmd("BufEnter", {
   desc = "Disable New Line Comment",
 })
 
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  callback = function()
+    -- Stop all LSP clients (modern version)
+    for _, client in pairs(vim.lsp.get_clients()) do
+      client.stop(true)
+    end
+
+    -- Dismiss Noice popups/messages (if loaded)
+    local ok, noice = pcall(require, "noice")
+    if ok then
+      noice.cmd("dismiss")
+    end
+  end,
+})
+
 api.nvim_create_autocmd("BufReadPost", {
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')

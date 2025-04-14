@@ -51,6 +51,7 @@ return {
   },
   {
     "folke/noice.nvim",
+    enabled = true,
     event = "VeryLazy",
     dependencies = {
       { "rcarriga/nvim-notify" },
@@ -106,7 +107,7 @@ return {
     },
     config = function()
       require("tokyonight").setup()
-      vim.cmd("colorscheme tokyonight-storm")
+      vim.cmd("colorscheme tokyonight-moon")
     end,
   },
   {

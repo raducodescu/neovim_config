@@ -17,7 +17,7 @@ return {
         ---@type snacks.dashboard.Item[]
         -- stylua: ignore start
         keys = {
-          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.picker.smart({filter = {cwd = true}})" },
+          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.picker.files({filter = {cwd = true}})" },
           { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
           { icon = " ", key = "s", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           -- { icon = " ", key = "b", desc = "File browser", action = function()  require("yazi").yazi(nil, vim.fn.getcwd()) end, },
@@ -30,7 +30,7 @@ return {
       sections = {
         { section = "header" },
         { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-        { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+        { icon = " ", title = "Recent Files", section = "recent_files", cwd = true },
         { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
         { section = "startup" },
       },
@@ -103,7 +103,7 @@ return {
     { "<leader>ss", function() Snacks.picker.grep():set_layout("ivy") end, desc = "Strings" },
     { "<leader>sh", function() Snacks.picker.help():set_layout("ivy") end, desc = "Help" },
     { "<leader>fr", function() Snacks.picker.recent():set_layout("ivy") end, desc = "Recent" },
-    { "<leader>ff", function() Snacks.picker.smart({filter = {cwd = true}}):set_layout("ivy") end, desc = "Smart find" },
+    { "<leader>ff", function() Snacks.picker.files({filter = {cwd = true}}):set_layout("ivy") end, desc = "Smart find" },
     { "<leader>sl", function() Snacks.picker.lines():set_layout("ivy") end, desc = "Buffer Lines" },
     { "<leader>si", function() Snacks.picker.icons():set_layout("ivy") end, desc = "Icons" },
     { "<leader>sL", function() Snacks.picker.lazy():set_layout("ivy") end, desc = "LazySpec" },

@@ -121,7 +121,7 @@ return {
     { "<leader>lr", function() Snacks.picker.lsp_references():set_layout("ivy") end, nowait = true, desc = "References" },
     { "<leader>lI", function() Snacks.picker.lsp_implementations():set_layout("ivy") end, desc = "Implementation" },
     { "<leader>lt", function() Snacks.picker.lsp_type_definitions():set_layout("ivy") end, desc = "Type Definition" },
-    { "<leader>bo", function() Snacks.picker.buffers():set_layout("ivy") end, desc = "Opened Buffers" },
+    { "<leader>bb", function() Snacks.picker.buffers():set_layout("ivy") end, desc = "Opened Buffers" },
     { "<leader>tt", function() Snacks.terminal() end, desc = "Toggle Terminal" },
   },
 

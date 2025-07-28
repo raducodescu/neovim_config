@@ -19,7 +19,7 @@ o.listchars = {                                                    -- define inv
   nbsp = "␣",
 }
 o.mouse          = "nv"                                            -- enable mouse see :h mouse
-o.colorcolumn    = "100"
+o.colorcolumn    = "95"
 o.relativenumber = false                                           -- set relative numbered lines
 o.number         = true
 o.scrolloff      = 10                                              -- Minimal number of screen lines to keep above and below the cursor

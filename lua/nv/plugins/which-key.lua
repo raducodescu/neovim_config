@@ -15,6 +15,7 @@ return {
       { "<leader>f", group = "Files" },
       { "<leader>g", group = "Git" },
       { "<leader>l", group = "Code" },
+      { "<leader>a", group = "Augment AI" },
       { "<leader>m", group = "Misc" },
       { "<leader>s", group = "Search" },
       { "<leader>t", group = "Toggles" },

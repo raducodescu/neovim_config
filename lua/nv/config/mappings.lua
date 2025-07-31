@@ -51,11 +51,18 @@ map("n", "<leader>fo", "gf", { desc = "Open path under cursor" })
 
 -- diagnostics
 -- stylua: ignore start
-map("n", "<leader>dj", function() vim.diagnostic.goto_next() end, { desc = "Next Diagnostic" })
-map("n", "<leader>dk", function() vim.diagnostic.goto_prev() end, { desc = "Prev Diagnostic" })
+map("n", "<leader>dj", function() vim.diagnostic.jump({count=1, float=true}) end, { desc = "Next Diagnostic" })
+map("n", "<leader>dk", function() vim.diagnostic.jump({count=-1, float=true}) end, { desc = "Prev Diagnostic" })
 map("n", "<leader>dc", function() vim.diagnostic.open_float() end, { desc = "Toggle current diagnostic" })
 map("n", "<leader>dd", function() vim.diagnostic.setqflist() end, { desc = "Open quickfix" })
 -- stylua: ignore end
+
+-- Augment AI mappings
+map("n", "<leader>ac", "<cmd>Augment chat<cr>", { desc = "Augment chat" })
+map("v", "<leader>ac", "<cmd>Augment chat<cr>", { desc = "Augment chat" })
+map("n", "<leader>an", "<cmd>Augment chat-new<cr>", { desc = "Augment chat-new" })
+map("n", "<leader>at", "<cmd>call augment#Accept()<cr>", { desc = "Augment chat-toggle" })
+map({ "n", "i" }, "<leader>aa", "<cmd>call augment#Accept()<cr>", { desc = "Augment accept" })
 
 -- move over a closing element in insert mode
 map("i", "<C-l>", function()

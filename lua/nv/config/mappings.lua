@@ -61,7 +61,7 @@ map("n", "<leader>dd", function() vim.diagnostic.setqflist() end, { desc = "Open
 map("n", "<leader>ac", "<cmd>Augment chat<cr>", { desc = "Augment chat" })
 map("v", "<leader>ac", "<cmd>Augment chat<cr>", { desc = "Augment chat" })
 map("n", "<leader>an", "<cmd>Augment chat-new<cr>", { desc = "Augment chat-new" })
-map("n", "<leader>at", "<cmd>call augment#Accept()<cr>", { desc = "Augment chat-toggle" })
+map("n", "<leader>at", "<cmd>Augment chat-toggle<cr>", { desc = "Augment chat-toggle" })
 map({ "n", "i" }, "<leader>aa", "<cmd>call augment#Accept()<cr>", { desc = "Augment accept" })
 
 -- move over a closing element in insert mode
